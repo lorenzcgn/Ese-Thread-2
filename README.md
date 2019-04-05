@@ -1,2 +1,2 @@
-# ese-thread
+# Ese Thread
 Ese Thread
