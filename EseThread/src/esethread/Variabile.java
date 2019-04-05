@@ -10,13 +10,13 @@ package esethread;
  * @author 75844087
  */
 public class Variabile {
-    private int var;
+    private double var;
 
-    public int getVar() {
+    public double getVar() {
         return var;
     }
 
-    public void setVar(int var) {
+    public void setVar(double var) {
         this.var = var;
     }
     

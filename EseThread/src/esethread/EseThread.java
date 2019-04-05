@@ -28,14 +28,29 @@ public class EseThread {
         
         for (int i=0;i<5;i++)
         new ProvaThread1().start();  */
-    
-        Variabile y=new Variabile();
-        y.setVar(10);
+        Variabile GC=new Variabile();
+        GC.setVar(0);
         
-        for (int i=0; i<5; i++)
-        new Thread(new ProvaThread1()).start();
-       
-        System.out.println(Thread.currentThread().getName());
+        /* ProvaThread1 C1=new ProvaThread1(1,GC);
+        Thread TC1=new Thread(C1);
+        TC1.start();
+        
+        Thread TC2=new Thread(new ProvaThread1(2,GC)); 
+        TC2.start(); */
+        
+        for (int i=0;i<10; i++){
+            new Thread(new ProvaThread1(3,GC)).start();
+        }
+        
+        
+        
+        
+        while (Thread.activeCount()>1){
+            System.out.println(Thread.activeCount());
+        }
+        System.out.println("Ora ho concluso");
+        System.out.println(Thread.activeCount());
+        System.out.println("Risulato finale: "+GC.getVar());
     
     
     }

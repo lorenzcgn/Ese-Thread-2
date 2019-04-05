@@ -10,23 +10,18 @@ package esethread;
  * @author 75844087
  */
 public class ProvaThread1 implements Runnable{
+    private double B;
+    private Variabile gc;
     
-    public ProvaThread1() {
-        
+    public ProvaThread1(double b, Variabile gc) {
+        B=b;
+        this.gc=gc;
     }
     
-    // capire thread attivo in un momento
     @Override
     public void run() {
-        for (int i=0; i<5; i++){
-            try {
-            Thread.sleep(100);
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-            System.out.println(Thread.currentThread().getName()+" conto "+i);
-        }
+        gc.setVar(gc.getVar()+B);
+        System.out.println(Thread.currentThread().getName()+" "+gc.getVar());
     }
     
 }
